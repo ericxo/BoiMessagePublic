@@ -16,8 +16,9 @@ struct ContentView: View {
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             HStack {
-                Text("􀊼").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.system(size: 60))
-                Text(msgView.msgToDisplay).lineLimit(nil)
+                Image("heart")
+//                Text().fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.system(size: 60))
+                Text(msgView.msgToDisplay).lineLimit(nil).fixedSize(horizontal: false, vertical: true)
             }.padding()
             HStack {
                 Spacer()
@@ -59,3 +60,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(cvWindow: nil)
     }
 }
+
