@@ -14,6 +14,7 @@
 		6457614F252E5F13006E2FB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6457614D252E5F13006E2FB8 /* Main.storyboard */; };
 		6457615B252E5F13006E2FB8 /* boiMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6457615A252E5F13006E2FB8 /* boiMessageTests.swift */; };
 		64576166252E5F13006E2FB8 /* boiMessageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64576165252E5F13006E2FB8 /* boiMessageUITests.swift */; };
+		64576183252E66E4006E2FB8 /* msgs.json in Resources */ = {isa = PBXBuildFile; fileRef = 64576182252E66E4006E2FB8 /* msgs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		64576161252E5F13006E2FB8 /* boiMessageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = boiMessageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64576165252E5F13006E2FB8 /* boiMessageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boiMessageUITests.swift; sourceTree = "<group>"; };
 		64576167252E5F13006E2FB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64576182252E66E4006E2FB8 /* msgs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = msgs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				64576143252E5F0D006E2FB8 /* boiMessage */,
 				64576159252E5F13006E2FB8 /* boiMessageTests */,
+				64576176252E6536006E2FB8 /* Resources */,
 				64576164252E5F13006E2FB8 /* boiMessageUITests */,
 				64576142252E5F0D006E2FB8 /* Products */,
 			);
@@ -133,6 +136,14 @@
 				64576167252E5F13006E2FB8 /* Info.plist */,
 			);
 			path = boiMessageUITests;
+			sourceTree = "<group>";
+		};
+		64576176252E6536006E2FB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				64576182252E66E4006E2FB8 /* msgs.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				6457614F252E5F13006E2FB8 /* Main.storyboard in Resources */,
 				6457614C252E5F13006E2FB8 /* Preview Assets.xcassets in Resources */,
 				64576149252E5F13006E2FB8 /* Assets.xcassets in Resources */,
+				64576183252E66E4006E2FB8 /* msgs.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
