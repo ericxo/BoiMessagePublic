@@ -9,13 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let cvWindow:NSWindow?
+    
     @ObservedObject var msgView : RandomViewModel = RandomViewModel()
     
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             HStack {
                 Text("􀊼").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.system(size: 60))
-                Text(msgView.msgToDisplay).lineLimit(nil).fixedSize()
+                Text(msgView.msgToDisplay).lineLimit(nil)
             }.padding()
             HStack {
                 Spacer()
@@ -24,7 +26,11 @@ struct ContentView: View {
                 }, label: {
                     Text("Show me another")
                 })
-                Button("I appreciate my boyfriend (close)") {}
+                Button(action: {
+                    self.cvWindow!.close()
+                }, label: {
+                    Text("I appreciate my boyfriend (close)")
+                })
             }.padding()
         }.padding().frame(minWidth: 600, idealWidth: 600, maxWidth: 600, minHeight: 150, idealHeight: 150, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
@@ -50,6 +56,6 @@ class RandomViewModel : ObservableObject {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(cvWindow: nil)
     }
 }
