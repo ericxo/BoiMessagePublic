@@ -58,6 +58,7 @@ class RandomViewModel : ObservableObject {
         let fileManager = FileManager.default
         let appSupportURL = fileManager.urls(for: .applicationDirectory, in: .userDomainMask).first!
         let directoryURL = appSupportURL.appendingPathComponent("BoiMessage")
+        
         let documentURL = directoryURL.appendingPathComponent ("msgs.json")
         print(documentURL.path)
         let urlString = "https://ericxo.github.io/msgs.json"
@@ -65,7 +66,6 @@ class RandomViewModel : ObservableObject {
         guard url != nil else {
             return
         }
-        var cacheMsg:Bool = false
         let session = URLSession.shared
         let dataTaskVar = session.dataTask(with: url!) { data, response, error in
             if error == nil && data != nil {
@@ -75,7 +75,6 @@ class RandomViewModel : ObservableObject {
                     
                     self.msgs = try decoder.decode([String].self, from: data!)
                     self.msgToDisplay = self.msgs.randomElement()!
-                    cacheMsg = true
                     try fileManager.createDirectory (at: directoryURL, withIntermediateDirectories: true, attributes: nil)
                     try? JSONSerialization.data(withJSONObject: self.msgs).write(to: documentURL)
                 }
@@ -84,7 +83,6 @@ class RandomViewModel : ObservableObject {
                     let data = try! Data(contentsOf: documentURL)
                     self.msgs = try! JSONDecoder().decode([String].self, from: data)
                     self.msgToDisplay = self.msgs.randomElement()!
-                    cacheMsg = true
                 }
             }
             else {
@@ -92,13 +90,7 @@ class RandomViewModel : ObservableObject {
             }
         }
         dataTaskVar.resume()
-        if !cacheMsg {
-            let data = try! Data(contentsOf: documentURL)
-            self.msgs = try! JSONDecoder().decode([String].self, from: data)
-            self.msgToDisplay = self.msgs.randomElement()!
-        }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
