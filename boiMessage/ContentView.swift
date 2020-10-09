@@ -61,7 +61,7 @@ class RandomViewModel : ObservableObject {
         
         let documentURL = directoryURL.appendingPathComponent ("msgs.json")
         print(documentURL.path)
-        let urlString = "https://ericxo.github.io/msgs.json"
+        let urlString = "https://Your/remote/json/here"
         let url = URL(string: urlString)
         guard url != nil else {
             return
