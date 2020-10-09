@@ -1,0 +1,11 @@
+README
+
+Please excuse the shaky code, as this is my first app
+
+Feel free to use / discard the icon, I made it for personal use.
+
+You may want to host a JSON array of strings on a remote location so that the program will provide random, updatable strings
+
+You can find this URL to change in ContentView.webJSONTry()
+
+You can also modify the msgs.json resource in Bundle.main to change the default strings for offline / first time / fail-safe use.
